@@ -1,9 +1,10 @@
 import { API } from "../../global/utils/constants";
 import { Todo } from "../../global/types/types";
+import { useFetch } from "../../global/hooks/useFetch";
 import "./todoList.css";
 
 export function TodoList() {
-  const { data: todos, isLoading, error } = useFetch<string>(`${API.MAIN_URL}/todos`);
+  const { data: todos, isLoading, error } = useFetch(`${API.MAIN_URL}/todos`);
 
   return (
     <div className="todo-list-container">
