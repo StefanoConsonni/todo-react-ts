@@ -64,3 +64,61 @@ body {
 .font-bold {
   font-weight: 700;
 }
+
+/****************/
+/* FORMS STYLES */
+/****************/
+
+.page-form-container {
+  display: flex;
+  justify-content: center;
+}
+
+.form-container {
+  width: 70%;
+  margin-top: 3rem;
+  padding: 1.5rem;
+  border: solid 1px var(--light-pink);
+  border-radius: 8px;
+}
+
+.form-container label {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+.form-error-message {
+  font-size: 0.75rem;
+  color: var(--red);
+  display: none;
+}
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  padding: 0.8rem;
+  margin: 0.8rem 0;
+  border-radius: 8px;
+}
+
+input:invalid[focused="true"] {
+  border: 1px solid var(--red);
+}
+
+input:invalid[focused="true"] ~ span {
+  display: block;
+}
+
+.form-select-status {
+  width: 20%;
+  border-radius: 4px;
+  padding: 0.3rem;
+  margin-top: 0.8rem;
+}
+
+.btn-form {
+  margin-top: 1.2rem;
+}

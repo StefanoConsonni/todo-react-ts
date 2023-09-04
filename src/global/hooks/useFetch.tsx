@@ -22,7 +22,7 @@ export const useFetch = (url: string) => {
 
       setData(data);
       setError(null);
-    } catch (err: unknown) {
+    } catch (err) {
       if (typeof err === "string") {
         throw new Error(err);
       } else {

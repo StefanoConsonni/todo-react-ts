@@ -7,7 +7,7 @@ export function Homepage() {
 
   return (
     <div className="homepage-container">
-      <button onClick={() => navigate("/create")} className="btn">
+      <button onClick={() => navigate("/todos/create")} className="btn">
         Add new todo
       </button>
       <TodoList />

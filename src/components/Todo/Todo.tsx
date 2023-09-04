@@ -2,7 +2,7 @@ import { useState, FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import { TTodo } from "../../global/types/types";
 import { getRequestOptions, API } from "../../global/utils";
-import { iconStyles } from "../../global/styles/sxStyles";
+import { checkIconStyles } from "../../global/styles/sxStyles";
 import CheckBoxIcon from "@mui/icons-material/CheckBox";
 import CheckBoxOutlineBlankIcon from "@mui/icons-material/CheckBoxOutlineBlank";
 import "./todo.css";
@@ -36,9 +36,9 @@ export function Todo({ id, title, isCompleted }: TTodo) {
     <div className="todo-container" onClick={() => navigate(`/todos/${id}`)}>
       <div className="todo-container-details">
         {isDone ? (
-          <CheckBoxIcon onClick={handleToggle} sx={iconStyles} />
+          <CheckBoxIcon onClick={handleToggle} sx={checkIconStyles} />
         ) : (
-          <CheckBoxOutlineBlankIcon onClick={handleToggle} sx={iconStyles} />
+          <CheckBoxOutlineBlankIcon onClick={handleToggle} sx={checkIconStyles} />
         )}
         <p className="todo-title">{title}</p>
       </div>
