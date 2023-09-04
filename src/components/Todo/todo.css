@@ -1,0 +1,21 @@
+.todo-container {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin-top: 1.8rem;
+  border-radius: 8px;
+  border: solid 1px var(--dark-pink);
+  cursor: pointer;
+}
+
+.todo-container-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo-title {
+  margin-left: 0.5rem;
+}

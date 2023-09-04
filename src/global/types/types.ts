@@ -1,6 +1,6 @@
-export type Todo = {
+export type TTodo = {
   id: number;
   title: string;
   description?: string;
-  status: string;
+  isCompleted: boolean;
 };

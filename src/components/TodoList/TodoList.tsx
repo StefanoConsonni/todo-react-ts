@@ -1,5 +1,6 @@
+import { Todo } from "../Todo/Todo";
 import { API } from "../../global/utils/constants";
-import { Todo } from "../../global/types/types";
+import { TTodo } from "../../global/types/types";
 import { useFetch } from "../../global/hooks/useFetch";
 import "./todoList.css";
 
@@ -14,8 +15,8 @@ export function TodoList() {
       {todos && todos.length === 0 && <p>There are no todos to show</p>}
       {todos &&
         todos.length > 0 &&
-        todos.map((todo: Todo) => (
-          <Todo key={todo.id} id={todo.id} title={todo.title} status={todo.status} />
+        todos.map((todo: TTodo) => (
+          <Todo key={todo.id} id={todo.id} title={todo.title} isCompleted={todo.isCompleted} />
         ))}
     </div>
   );

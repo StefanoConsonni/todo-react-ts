@@ -22,13 +22,11 @@ export const useFetch = (url: string) => {
 
       setData(data);
       setError(null);
-    } catch (err) {
-      if (err instanceof Error) {
-        if (err.name === "AbortError") {
-          throw new Error(err.message);
-        } else {
-          setError("Could not fetch the data");
-        }
+    } catch (err: unknown) {
+      if (typeof err === "string") {
+        throw new Error(err);
+      } else {
+        setError("Could not fetch the data");
       }
     } finally {
       setIsLoading(false);
