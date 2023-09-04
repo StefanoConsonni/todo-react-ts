@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { TodoList } from "../../components";
 import "./homepage.css";
 
 export function Homepage() {
@@ -9,6 +10,7 @@ export function Homepage() {
       <button onClick={() => navigate("/create")} className="btn">
         Add new todo
       </button>
+      <TodoList />
     </div>
   );
 }
