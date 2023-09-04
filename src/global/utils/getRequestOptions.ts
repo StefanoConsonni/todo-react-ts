@@ -1,4 +1,6 @@
-export function getRequestOption(httpMethod: string, data: unknown) {
+import { TRequestOptions } from "../types/types";
+
+export function getRequestOptions(httpMethod: string, data: object): TRequestOptions {
   return {
     method: httpMethod,
     headers: {

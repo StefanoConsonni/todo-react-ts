@@ -4,3 +4,11 @@ export type TTodo = {
   description?: string;
   isCompleted: boolean;
 };
+
+export type TRequestOptions = {
+  method: string;
+  headers: {
+    "Content-Type": string;
+  };
+  body: string;
+};
