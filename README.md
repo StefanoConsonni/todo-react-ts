@@ -1,27 +1,55 @@
-# React + TypeScript + Vite
+# Todo React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Table of contents
 
-Currently, two official plugins are available:
+- [General info](#general-info)
+- [Tech Stack](#tech-stack)
+- [Setup](#setup)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## General info
 
-## Expanding the ESLint configuration
+A todo app that allow users to create, edit, delete and manage their tasks.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Tech Stack
 
-- Configure the top-level `parserOptions` property like this:
+This project is created with:
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+- REACT
+- Typescript
+- HTML
+- CSS
+- Vite
+- JSON Server
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Setup
+
+1. Make sure that [nvm](https://github.com/nvm-sh/nvm) and [npm](https://www.npmjs.com/) are installed globally
+
+2. Install the correct version of Node running the following command in the root directory
+
+   ```shell
+   nvm install
+   ```
+
+3. Install the dependencies
+
+   ```shell
+   npm install
+   ```
+
+4. Retrieve the local data with the help of json-server
+
+   ```shell
+   npx json-server --watch data/db.json
+   ```
+
+5. Run the app locally
+
+   ```shell
+   npm run dev
+   ```
+
+Open [http://localhost:5173/](http://localhost:5173/) to view it in the browser.
+
+The page will reload if you make any edits.<br>
+You will also see any lint errors in the console.
