@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;700&family=Open+Sans:wght@300;500;700&display=swap");
+
+:root {
+  /* Fonts */
+  --font-primary: "Josefin Sans", sans-serif;
+
+  /* Colors */
+  --colors-app-bg: hsl(235, 21%, 11%);
+  --colors-todo-bg: hsl(235, 24%, 19%);
+  --colors-todo-bg-hover: hsl(233, 24%, 22%);
+  --colors-text-primary: hsl(234, 39%, 85%);
+  --colors-text-secondary: hsl(233, 14%, 35%);
+  --colors-text-input: hsl(240, 5%, 8%);
+  --colors-completed-todo: hsl(234, 11%, 52%);
+  --colors-btn-submit-hover: hsl(0, 0%, 100%);
+  --colors-br: hsl(233, 14%, 35%);
+
+  --colors-delete-icon: hsl(234, 24%, 67%);
+  --colors-tab-active: hsl(220, 98%, 61%);
+  --colors-check-gradient: linear-gradient(135deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  --colors-error: #f43b53;
+
+  /* Background images */
+  --bg-desktop: url("../../images/bg-desktop-dark.jpg");
+  --bg-mobile: url("../../images/bg-mobile-dark.jpg");
+}
+
+/*****************/
+/* GLOBAL STYLES */
+/*****************/
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  transition-property: background-color, color, border-color;
+}
+
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button {
+  padding: 0;
+  margin: 0;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-weight: 400;
+  font-size: 1.25rem;
+  background: var(--bg-desktop) no-repeat top/contain var(--colors-app-bg);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  width: min(720px, 100%);
+  min-height: 100vh;
+  margin-inline: auto;
+  padding: 6rem 2rem 2rem;
+}
+
+*:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.4rem var(--colors-br);
+}
+
+/*******************************/
+/* GENERAL REUSABLE COMPONENTS */
+/*******************************/
+
+.btn {
+  padding: 0.8rem 1.6rem;
+  border: none;
+  cursor: pointer;
+  background-color: var(--colors-todo-bg);
+  color: var(--colors-text-primary);
+  transition: all 0.3s;
+}
+
+.btn-add:hover {
+  background-color: var(--colors-todo-bg-hover);
+}
+
+/****************/
+/* FORMS STYLES */
+/****************/
+
+.form-page-container {
+  display: flex;
+  justify-content: center;
+  background-color: var(--colors-todo-bg);
+  color: var(--colors-text-primary);
+  position: relative;
+  font-size: 1rem;
+}
+
+.form-container {
+  width: 70%;
+  margin-top: 3rem;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.form-heading {
+  font-size: 1.6rem;
+}
+
+.form-container label {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+.form-error-message {
+  color: var(--colors-error);
+}
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  padding: 0.8rem;
+  margin: 0.8rem 0;
+  border-radius: 5px;
+  border: none;
+  color: var(--colors-text-input);
+}
+
+.input-error {
+  color: var(--colors-error);
+}
+
+.form-select-status {
+  border-radius: 5px;
+  padding: 0.5rem;
+  margin-top: 0.8rem;
+  cursor: pointer;
+}
+
+.btn-form {
+  margin-top: 1.2rem;
+  color: var(--colors-todo-bg);
+  background-color: var(--colors-text-primary);
+}
+
+.btn-form:hover {
+  background-color: var(--colors-btn-submit-hover);
+}
+
+/*****************/
+/* MEDIA QUERIES */
+/*****************/
+
+@media (max-width: 700px) {
+  body {
+    background-image: var(--bg-mobile);
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 0.875rem;
+  }
+
+  main {
+    padding: 3rem 1rem 2rem;
+    gap: 2rem;
+  }
+
+  .form-heading {
+    font-size: 1.3rem;
+  }
+}

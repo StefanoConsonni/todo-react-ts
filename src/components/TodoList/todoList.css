@@ -1,8 +1,31 @@
-.todo-list-container {
-  width: 70%;
-  margin-top: 2rem;
+.todo-section {
+  --children-padding-inline: 1.5rem;
+  --children-padding-block: 1.25rem;
+  --children-gap: 1.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.todo-list {
+  background-color: var(--colors-todo-bg);
+  border-radius: 5px;
+}
+
+.todo-list > :not(:last-child),
+.todo-items > :not(:last-child) {
+  border-bottom: 1px solid var(--colors-br);
+}
+
+@media (max-width: 600px) {
+  .todo-section {
+    --children-padding-inline: 1rem;
+    --children-padding-block: 1.25rem;
+    --children-gap: 1rem;
+  }
+
+  .todo-section > .todo-filters {
+    display: flex;
+  }
 }

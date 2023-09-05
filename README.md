@@ -1,4 +1,4 @@
-# Todo React
+# Todo App
 
 ## Table of contents
 

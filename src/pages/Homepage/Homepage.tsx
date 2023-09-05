@@ -1,15 +1,9 @@
-import { useNavigate } from "react-router-dom";
-import { TodoList } from "../../components";
-import "./homepage.css";
+import { Header, TodoList } from "../../components";
 
 export function Homepage() {
-  const navigate = useNavigate();
-
   return (
-    <div className="homepage-container">
-      <button onClick={() => navigate("/todos/create")} className="btn">
-        Add new todo
-      </button>
+    <div>
+      <Header />
       <TodoList />
     </div>
   );

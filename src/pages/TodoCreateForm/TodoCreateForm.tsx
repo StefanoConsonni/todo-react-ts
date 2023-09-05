@@ -2,9 +2,10 @@ import { Link, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import { v4 as uuidv4 } from "uuid";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import { todoCreateSchema } from "../../global/validationSchemas/schemas";
+import { todoFormSchema } from "../../global/validationSchemas/schemas";
 import { TFormValues, TTodo } from "../../global/types/types";
 import { getRequestOptions } from "../../global/utils";
+import { arrowIconStyles } from "../../global/styles/sxStyles";
 
 export function TodoCreateForm() {
   const navigate = useNavigate();
@@ -37,25 +38,17 @@ export function TodoCreateForm() {
         description: "",
         status: "not completed",
       },
-      validationSchema: todoCreateSchema,
+      validationSchema: todoFormSchema,
       onSubmit,
     });
 
-  const iconStyles = {
-    cursor: "pointer",
-    fontSize: "2rem",
-    color: "var(--light-pink)",
-    marginBottom: "1rem",
-  };
-
   return (
-    <div className="page-form-container">
+    <div className="form-page-container">
+      <Link to="/">
+        <ArrowBackIcon sx={arrowIconStyles} />
+      </Link>
       <div className="form-container">
-        <Link to="/">
-          <ArrowBackIcon sx={iconStyles} />
-        </Link>
-        <h1>Create a Todo</h1>
-
+        <h1 className="form-heading">Create a Todo</h1>
         <form onSubmit={handleSubmit} autoComplete="off">
           <div className="form-input">
             <label htmlFor="title">Title</label>
@@ -68,7 +61,7 @@ export function TodoCreateForm() {
               onBlur={handleBlur}
               className={errors.title && touched.title ? "input-error" : ""}
             />
-            {errors.title && touched.title && <p className="error">{errors.title}</p>}
+            {errors.title && touched.title && <p className="input-error">{errors.title}</p>}
           </div>
 
           <div className="form-input">
