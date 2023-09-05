@@ -1,8 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
-import { TTodo } from "../types/types";
 
-export const useFetch = (url: string) => {
-  const [data, setData] = useState<TTodo | TTodo[] | null>(null);
+export const useFetch = <T,>(url: string) => {
+  const [data, setData] = useState<T | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   const [abortController, setAbortController] = useState<AbortController | null>(null);

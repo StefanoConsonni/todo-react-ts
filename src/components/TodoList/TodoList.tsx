@@ -7,7 +7,7 @@ import "./todoList.css";
 
 export function TodoList() {
   const navigate = useNavigate();
-  const { data: todos, isLoading, error } = useFetch(`${API.MAIN_URL}/todos`);
+  const { data: todos, isLoading, error } = useFetch<TTodo[]>(`${API.MAIN_URL}/todos`);
 
   return (
     <div className="todo-section">

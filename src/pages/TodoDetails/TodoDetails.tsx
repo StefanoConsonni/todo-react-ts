@@ -8,7 +8,7 @@ import "./todoDetails.css";
 
 export function TodoDetails() {
   const { id } = useParams();
-  const { data: todo, isLoading, error } = useFetch(`${API.MAIN_URL}/todos/${id}`);
+  const { data: todo, isLoading, error } = useFetch<TTodo>(`${API.MAIN_URL}/todos/${id}`);
 
   return (
     <div className="todo-details-page-container">
@@ -21,18 +21,17 @@ export function TodoDetails() {
         {todo && (
           <>
             <h1 className="todo-details-heading">Todo details</h1>
-
             <div className="todo-details-single-content">
               <h3>Title</h3>
-              <p>{(todo as TTodo).title}</p>
+              <p>{todo.title}</p>
             </div>
             <div className="todo-details-single-content">
               <h3>Description</h3>
-              <p>{(todo as TTodo).description}</p>
+              <p>{todo.description}</p>
             </div>
             <div className="todo-details-single-content">
               <h3>Status</h3>
-              <p>{`${(todo as TTodo).isCompleted ? "Completed" : "Not Completed"}`}</p>
+              <p>{`${todo.isCompleted ? "Completed" : "Not Completed"}`}</p>
             </div>
           </>
         )}
