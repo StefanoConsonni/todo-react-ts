@@ -1,0 +1,5 @@
+.not-found-container {
+  background-color: var(--colors-todo-bg);
+  color: var(--colors-text-primary);
+  padding: 3rem;
+}
