@@ -6,6 +6,14 @@
   body {
     background-image: var(--bg-mobile);
   }
+
+  .form-container {
+    width: 90%;
+  }
+
+  .todo-details-container {
+    width: 90%;
+  }
 }
 
 @media (max-width: 600px) {

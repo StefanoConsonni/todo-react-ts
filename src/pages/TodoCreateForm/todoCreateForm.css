@@ -9,7 +9,7 @@
 
 .form-container {
   width: 70%;
-  margin-top: 3rem;
+  margin: 3rem 0 3rem;
   padding: 1.5rem;
   border-radius: 8px;
 }
@@ -32,7 +32,7 @@
   flex-direction: column;
 }
 
-input {
+.form-input input {
   padding: 0.8rem;
   margin: 0.8rem 0;
   border-radius: 5px;
@@ -49,6 +49,7 @@ input {
   padding: 0.5rem;
   margin-top: 0.8rem;
   cursor: pointer;
+  color: var(--colors-text-input);
 }
 
 .btn-form {

@@ -1,0 +1,27 @@
+.todo-details-page-container {
+  display: flex;
+  justify-content: center;
+  background-color: var(--colors-todo-bg);
+  color: var(--colors-text-primary);
+  position: relative;
+  font-size: 1rem;
+}
+
+.todo-details-container {
+  width: 70%;
+  margin: 3rem 0 3rem;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.todo-details-heading {
+  font-size: 1.6rem;
+}
+
+.todo-details-single-content {
+  margin-top: 1.2rem;
+}
+
+.todo-details-single-content p {
+  margin-top: 0.3rem;
+}

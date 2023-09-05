@@ -30,7 +30,7 @@
     var(--colors-check-gradient) border-box;
 }
 
-.todo .description {
+.todo .todo-description {
   padding: 2px;
   padding-inline-start: var(--children-gap);
 }

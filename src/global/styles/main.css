@@ -51,6 +51,7 @@ button {
 
 button,
 input,
+select,
 textarea {
   font: inherit;
   color: inherit;
@@ -90,9 +91,12 @@ main {
   padding: 0.8rem 1.6rem;
   border: none;
   cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-add {
   background-color: var(--colors-todo-bg);
   color: var(--colors-text-primary);
-  transition: all 0.3s;
 }
 
 .btn-add:hover {

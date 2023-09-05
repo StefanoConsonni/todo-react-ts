@@ -38,9 +38,7 @@ export function Todo({ id, title, isCompleted }: TTodo) {
           </svg>
         )}
       </div>
-      <div className="description" onClick={handleToggle}>
-        {title}
-      </div>
+      <div className="todo-description">{title}</div>
       <button type="button" className="delete icon-btn">
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18">
           <path

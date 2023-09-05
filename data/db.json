@@ -10,7 +10,7 @@
       "id": "8f3z01e0",
       "title": "Go to the gym",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
-      "isCompleted": true
+      "isCompleted": false
     },
     {
       "id": "2rc6wce0",
@@ -28,6 +28,12 @@
       "id": "9de24da3",
       "title": "Go to the post office",
       "description": "Lorem ipsum ",
+      "isCompleted": false
+    },
+    {
+      "id": "2f03fbe7",
+      "title": "My todo",
+      "description": "jwbcwbcb b bfb",
       "isCompleted": false
     }
   ]
