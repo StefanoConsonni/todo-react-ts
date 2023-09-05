@@ -6,6 +6,7 @@ import { todoFormSchema } from "../../global/validationSchemas/schemas";
 import { TFormValues, TTodo } from "../../global/types/types";
 import { getRequestOptions } from "../../global/utils";
 import { arrowIconStyles } from "../../global/styles/sxStyles";
+import "./todoCreateForm.css";
 
 export function TodoCreateForm() {
   const navigate = useNavigate();

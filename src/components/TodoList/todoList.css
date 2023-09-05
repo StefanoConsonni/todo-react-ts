@@ -17,15 +17,3 @@
 .todo-items > :not(:last-child) {
   border-bottom: 1px solid var(--colors-br);
 }
-
-@media (max-width: 600px) {
-  .todo-section {
-    --children-padding-inline: 1rem;
-    --children-padding-block: 1.25rem;
-    --children-gap: 1rem;
-  }
-
-  .todo-section > .todo-filters {
-    display: flex;
-  }
-}

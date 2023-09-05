@@ -76,9 +76,3 @@
 .todo:hover .delete {
   opacity: 1;
 }
-
-@media (max-width: 600px) {
-  .delete {
-    opacity: 1;
-  }
-}
