@@ -6,7 +6,6 @@ export const useFetch = <T,>(url: string) => {
   const [error, setError] = useState<string | null>(null);
   const [abortController, setAbortController] = useState<AbortController | null>(null);
 
-  // Cache the function with useCallback
   const fetchData = useCallback(async () => {
     if (!abortController) {
       return;

@@ -1,4 +1,4 @@
-.todo-section {
+.todo-list-section {
   --children-padding-inline: 1.5rem;
   --children-padding-block: 1.25rem;
   --children-gap: 1.5rem;
@@ -13,7 +13,18 @@
   border-radius: 5px;
 }
 
+.todo-list-paragraphs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-list-paragraphs p {
+  color: var(--colors-text-primary);
+  font-size: 1.5rem;
+}
+
 .todo-list > :not(:last-child),
-.todo-items > :not(:last-child) {
+.todo-list-items > :not(:last-child) {
   border-bottom: 1px solid var(--colors-br);
 }

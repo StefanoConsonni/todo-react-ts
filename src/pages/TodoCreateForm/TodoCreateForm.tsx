@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { todoFormSchema } from "../../global/validationSchemas/schemas";
 import { TFormValues, TTodo } from "../../global/types/types";
-import { getRequestOptions } from "../../global/utils";
+import { API, getRequestOptions } from "../../global/utils";
 import { arrowIconStyles } from "../../global/styles/sxStyles";
 import "./todoCreateForm.css";
 
@@ -23,11 +23,12 @@ export function TodoCreateForm() {
 
     const requestOptions = getRequestOptions("POST", newData);
 
-    fetch("http://localhost:3000/todos", requestOptions)
+    fetch(`${API.MAIN_URL}/todos`, requestOptions)
       .then((res) => res.json())
       .catch((err) => {
         throw new Error(err);
       });
+
     actions.resetForm();
     navigate("/");
   }

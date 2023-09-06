@@ -1,10 +1,10 @@
 import { useState, FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
-import { TTodo } from "../../global/types/types";
+import { TTodoComponentProps } from "../../global/types/types";
 import { getRequestOptions, API } from "../../global/utils";
 import "./todo.css";
 
-export function Todo({ id, title, isCompleted }: TTodo) {
+export function Todo({ id, title, isCompleted, todos, setTodos }: TTodoComponentProps) {
   const navigate = useNavigate();
   const [isDone, setIsDone] = useState<boolean>(isCompleted);
 
@@ -29,6 +29,19 @@ export function Todo({ id, title, isCompleted }: TTodo) {
       });
   };
 
+  const handleDelete = (e: FormEvent, id: string) => {
+    e.stopPropagation();
+    const updatedTodos = todos.filter((todo) => todo.id !== id);
+
+    fetch(`${API.MAIN_URL}/todos/${id}`, {
+      method: "DELETE",
+    })
+      .then(() => setTodos(updatedTodos))
+      .catch((err) => {
+        throw new Error(err);
+      });
+  };
+
   return (
     <div className={`todo ${isDone ? "completed" : ""}`} onClick={() => navigate(`/todos/${id}`)}>
       <div className="outline-circle check" onClick={handleToggle}>
@@ -39,7 +52,7 @@ export function Todo({ id, title, isCompleted }: TTodo) {
         )}
       </div>
       <div className="todo-description">{title}</div>
-      <button type="button" className="delete icon-btn">
+      <button type="button" className="delete icon-btn" onClick={(e) => handleDelete(e, id)}>
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18">
           <path
             fillRule="evenodd"
