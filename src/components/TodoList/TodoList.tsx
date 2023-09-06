@@ -8,12 +8,21 @@ import "./todoList.css";
 
 export function TodoList() {
   const navigate = useNavigate();
+  // const location = useLocation();
   const { data, isLoading, error } = useFetch<TTodo[]>(`${API.MAIN_URL}/todos`);
   const [todos, setTodos] = useState<TTodo[] | null>(null);
 
   useEffect(() => {
     setTodos(data);
   }, [data]);
+
+  // useCallback(() => {
+  //   const newTodo = location.state;
+  //   console.log("newTodo", newTodo);
+  //   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  //   // @ts-ignore
+  //   setTodos([newTodo, ...todos]);
+  // }, [location.state, todos]);
 
   return (
     <div className="todo-list-section">

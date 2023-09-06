@@ -13,24 +13,19 @@ export function TodoCreateForm() {
 
   async function onSubmit(values: TFormValues, actions: { resetForm: () => void }) {
     const uniqueId = uuidv4().slice(0, 8);
-
-    const newData: TTodo = {
+    const newTodo: TTodo = {
       id: uniqueId,
       title: values.title,
       description: values.description,
       isCompleted: values.status === "not completed" ? false : true,
     };
+    const requestOptions = getRequestOptions("POST", newTodo);
 
-    const requestOptions = getRequestOptions("POST", newData);
-
-    fetch(`${API.MAIN_URL}/todos`, requestOptions)
-      .then((res) => res.json())
-      .catch((err) => {
-        throw new Error(err);
-      });
-
+    fetch(`${API.MAIN_URL}/todos`, requestOptions).catch((err) => {
+      throw new Error(err);
+    });
     actions.resetForm();
-    navigate("/");
+    navigate("/", { state: newTodo });
   }
 
   const { values, errors, touched, isSubmitting, handleBlur, handleChange, handleSubmit } =

@@ -25,10 +25,12 @@ export function TodoDetails() {
               <h3>Title</h3>
               <p>{todo.title}</p>
             </div>
-            <div className="todo-details-single-content">
-              <h3>Description</h3>
-              <p>{todo.description}</p>
-            </div>
+            {todo.description && (
+              <div className="todo-details-single-content">
+                <h3>Description</h3>
+                <p>{todo.description}</p>
+              </div>
+            )}
             <div className="todo-details-single-content">
               <h3>Status</h3>
               <p>{`${todo.isCompleted ? "Completed" : "Not Completed"}`}</p>

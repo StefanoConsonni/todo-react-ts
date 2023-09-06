@@ -8,9 +8,15 @@ export function Todo({ id, title, isCompleted, todos, setTodos }: TTodoComponent
   const navigate = useNavigate();
   const [isDone, setIsDone] = useState<boolean>(isCompleted);
 
-  const handleToggle = (e: FormEvent): void => {
+  const handleToggle = (e: FormEvent, id: string): void => {
     e.stopPropagation();
     setIsDone((prevState) => !prevState);
+    const updatedTodos = todos.map((todo) =>
+      todo.id === id ? { ...todo, isCompleted: !todo.isCompleted } : todo
+    );
+    const completedTodos = updatedTodos.filter((todo) => todo.isCompleted);
+    const incompleteTodos = updatedTodos.filter((todo) => !todo.isCompleted);
+    setTodos([...incompleteTodos, ...completedTodos]);
 
     const newData =
       isCompleted === true
@@ -22,11 +28,9 @@ export function Todo({ id, title, isCompleted, todos, setTodos }: TTodoComponent
           };
 
     const requestOptions = getRequestOptions("PATCH", newData);
-    fetch(`${API.MAIN_URL}/todos/${id}`, requestOptions)
-      .then((res) => res.json())
-      .catch((err) => {
-        throw new Error(err);
-      });
+    fetch(`${API.MAIN_URL}/todos/${id}`, requestOptions).catch((err) => {
+      throw new Error(err);
+    });
   };
 
   const handleDelete = (e: FormEvent, id: string) => {
@@ -44,7 +48,7 @@ export function Todo({ id, title, isCompleted, todos, setTodos }: TTodoComponent
 
   return (
     <div className={`todo ${isDone ? "completed" : ""}`} onClick={() => navigate(`/todos/${id}`)}>
-      <div className="outline-circle check" onClick={handleToggle}>
+      <div className="outline-circle check" onClick={(e) => handleToggle(e, id)}>
         {isDone && (
           <svg xmlns="http://www.w3.org/2000/svg" width="11" height="9">
             <path fill="none" stroke="#FFF" strokeWidth="2" d="M1 4.304L3.696 7l6-6" />
