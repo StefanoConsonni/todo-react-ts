@@ -1,5 +1,5 @@
 import { vi } from "vitest";
-import { getCurrentDateTime } from "./getCurrentDateTime";
+import { getCurrentDateTime } from ".";
 
 describe("getCurrentDateTime function", () => {
   it("should return the current date and time in the expected format", () => {
