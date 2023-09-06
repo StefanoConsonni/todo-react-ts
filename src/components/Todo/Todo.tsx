@@ -11,6 +11,7 @@ export function Todo({ id, title, isCompleted, todos, setTodos }: TTodoComponent
   const handleToggle = (e: FormEvent, id: string): void => {
     e.stopPropagation();
     setIsDone((prevState) => !prevState);
+
     const updatedTodos = todos.map((todo) =>
       todo.id === id ? { ...todo, isCompleted: !todo.isCompleted } : todo
     );
