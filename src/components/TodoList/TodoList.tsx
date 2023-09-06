@@ -32,10 +32,11 @@ export function TodoList() {
         <div className="todo-list-paragraphs">
           {isLoading && <p>Loading...</p>}
           {error && <p>{error}</p>}
-          {todos && todos.length === 0 && <p>There are no todos to show</p>}
+          {!isLoading && todos && todos.length === 0 && <p>There are no todos to show</p>}
         </div>
         <div className="todo-list-items">
-          {todos &&
+          {!isLoading &&
+            todos &&
             todos.length > 0 &&
             todos.map((todo: TTodo) => (
               <Todo

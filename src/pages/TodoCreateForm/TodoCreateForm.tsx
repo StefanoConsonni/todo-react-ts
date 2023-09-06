@@ -28,7 +28,9 @@ export function TodoCreateForm() {
       throw new Error(err);
     });
     actions.resetForm();
-    navigate("/");
+    setTimeout(() => {
+      navigate("/");
+    }, 120);
   }
 
   const { values, errors, touched, isSubmitting, handleBlur, handleChange, handleSubmit } =
