@@ -1,6 +1,5 @@
-import React from "react";
 import { render, screen } from "@testing-library/react";
-import { NotFound } from "../src/components";
+import { NotFound } from "..";
 
 it("should have the text: error", () => {
   render(<NotFound />);

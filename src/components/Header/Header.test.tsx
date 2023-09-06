@@ -1,6 +1,5 @@
-import React from "react";
 import { render, screen } from "@testing-library/react";
-import { Header } from "../src/components";
+import { Header } from "..";
 
 it("should have the text: todo", () => {
   render(<Header />);
