@@ -2,8 +2,8 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import { Header } from "../src/components";
 
-it("should have", () => {
+it("should have the text: todo", () => {
   render(<Header />);
-  const title = screen.queryByText(/todo/i);
-  expect(title).toBeDefined();
+  const text = screen.queryByText(/todo/i);
+  expect(text).toBeDefined();
 });
