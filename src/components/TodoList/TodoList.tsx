@@ -14,10 +14,8 @@ export function TodoList() {
   useEffect(() => {
     if (data) {
       const sortedByDateTime = [...data].sort((a, b) => {
-        const dateA = new Date(a.createdAt);
-        const dateB = new Date(b.createdAt);
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
+        const dateA = Date.parse(a.createdAt);
+        const dateB = Date.parse(b.createdAt);
         return dateB - dateA;
       });
 
