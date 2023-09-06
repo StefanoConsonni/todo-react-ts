@@ -13,8 +13,16 @@ export function TodoList() {
 
   useEffect(() => {
     if (data) {
-      const completedTodos = data.filter((todo) => todo.isCompleted);
-      const incompleteTodos = data.filter((todo) => !todo.isCompleted);
+      const sortedByDateTime = [...data].sort((a, b) => {
+        const dateA = new Date(a.createdAt);
+        const dateB = new Date(b.createdAt);
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        return dateB - dateA;
+      });
+
+      const completedTodos = sortedByDateTime.filter((todo) => todo.isCompleted);
+      const incompleteTodos = sortedByDateTime.filter((todo) => !todo.isCompleted);
       const finalSortedArray = [...incompleteTodos, ...completedTodos];
       setTodos(finalSortedArray);
     }
