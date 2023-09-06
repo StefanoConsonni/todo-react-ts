@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { todoFormSchema } from "../../global/validationSchemas/schemas";
 import { TFormValues, TTodo } from "../../global/types/types";
-import { API, getRequestOptions } from "../../global/utils";
+import { API, getCurrentDateTime, getRequestOptions } from "../../global/utils";
 import { arrowIconStyles } from "../../global/styles/sxStyles";
 import "./todoCreateForm.css";
 
@@ -12,12 +12,15 @@ export function TodoCreateForm() {
   const navigate = useNavigate();
 
   async function onSubmit(values: TFormValues, actions: { resetForm: () => void }) {
+    const currDateTime = getCurrentDateTime();
     const uniqueId = uuidv4().slice(0, 8);
+
     const newTodo: TTodo = {
       id: uniqueId,
       title: values.title,
       description: values.description,
       isCompleted: values.status === "not completed" ? false : true,
+      createdAt: currDateTime,
     };
     const requestOptions = getRequestOptions("POST", newTodo);
 
@@ -25,7 +28,7 @@ export function TodoCreateForm() {
       throw new Error(err);
     });
     actions.resetForm();
-    navigate("/", { state: newTodo });
+    navigate("/");
   }
 
   const { values, errors, touched, isSubmitting, handleBlur, handleChange, handleSubmit } =

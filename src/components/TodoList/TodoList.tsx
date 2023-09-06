@@ -12,7 +12,12 @@ export function TodoList() {
   const [todos, setTodos] = useState<TTodo[] | null>(null);
 
   useEffect(() => {
-    setTodos(data);
+    if (data) {
+      const completedTodos = data.filter((todo) => todo.isCompleted);
+      const incompleteTodos = data.filter((todo) => !todo.isCompleted);
+      const finalSortedArray = [...incompleteTodos, ...completedTodos];
+      setTodos(finalSortedArray);
+    }
   }, [data]);
 
   return (

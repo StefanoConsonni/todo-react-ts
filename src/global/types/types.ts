@@ -3,6 +3,7 @@ export type TTodo = {
   title: string;
   description?: string;
   isCompleted: boolean;
+  createdAt: string;
 };
 
 export type TTodoComponentProps = {
