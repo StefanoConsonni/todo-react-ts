@@ -1,10 +1,9 @@
 import { render } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
-import "@testing-library/jest-dom";
 import { vi } from "vitest";
 import { Todo } from "./Todo";
 
-test("renders Todo component", () => {
+it("renders Todo component", () => {
   const todoProps = {
     id: "8f3z01e0",
     title: "Test Todo",
@@ -19,7 +18,7 @@ test("renders Todo component", () => {
   );
 });
 
-test('applies "completed" class when isDone is true', () => {
+it('applies "completed" class when isDone is true', () => {
   const todoProps = {
     id: "8f3z63e0",
     title: "Test Todo",

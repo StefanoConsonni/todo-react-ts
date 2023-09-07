@@ -1,10 +1,9 @@
 import { render, waitFor } from "@testing-library/react";
-import "@testing-library/jest-dom";
 import { MemoryRouter } from "react-router-dom";
 import { vi } from "vitest";
 import { TodoList } from "./TodoList";
 
-test("renders TodoList component", () => {
+it("renders TodoList component", () => {
   render(
     <MemoryRouter>
       <TodoList />
@@ -21,7 +20,7 @@ vi.mock("../../global/hooks/useFetch", () => ({
   }),
 }));
 
-test('displays "Loading..." while fetching data', async () => {
+it('displays "Loading..." while fetching data', async () => {
   const { getByText } = render(
     <MemoryRouter>
       <TodoList />

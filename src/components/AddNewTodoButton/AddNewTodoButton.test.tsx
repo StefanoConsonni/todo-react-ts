@@ -1,8 +1,9 @@
+import "@testing-library/jest-dom";
 import { render } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import { AddNewTodoButton } from "./AddNewTodoButton";
 
-test("renders AddNewTodoButton component", () => {
+it("renders AddNewTodoButton component", () => {
   render(
     <MemoryRouter>
       <AddNewTodoButton />
@@ -10,7 +11,7 @@ test("renders AddNewTodoButton component", () => {
   );
 });
 
-test("button has the correct CSS class", () => {
+it("button has the correct CSS class", () => {
   const { getByText } = render(
     <MemoryRouter>
       <AddNewTodoButton />
