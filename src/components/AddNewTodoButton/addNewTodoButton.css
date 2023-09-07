@@ -1,8 +1,0 @@
-.btn-add {
-  background-color: var(--colors-todo-bg);
-  color: var(--colors-text-primary);
-}
-
-.btn-add:hover {
-  background-color: var(--colors-todo-bg-hover);
-}
