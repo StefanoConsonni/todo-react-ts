@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { API } from "../../global/utils/constants";
 import { TTodo } from "../../global/types/types";
 import { useFetch } from "../../global/hooks/useFetch";
-import { Todo } from "../Todo/Todo";
+import { AddNewTodoButton } from "..";
+import { Todo } from "..";
 import "./todoList.css";
 
 export function TodoList() {
-  const navigate = useNavigate();
   const { data, isLoading, error } = useFetch<TTodo[]>(`${API.MAIN_URL}/todos`);
   const [todos, setTodos] = useState<TTodo[] | null>(null);
 
@@ -28,9 +27,7 @@ export function TodoList() {
 
   return (
     <div className="todo-list-section">
-      <button onClick={() => navigate("/todos/create")} className="btn btn-add">
-        Add new todo
-      </button>
+      <AddNewTodoButton />
       <div className="todo-list">
         <div className="todo-list-paragraphs">
           {isLoading && <p>Loading...</p>}

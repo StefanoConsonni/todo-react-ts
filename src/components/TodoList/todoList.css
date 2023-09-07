@@ -8,15 +8,6 @@
   margin-top: 2rem;
 }
 
-.btn-add {
-  background-color: var(--colors-todo-bg);
-  color: var(--colors-text-primary);
-}
-
-.btn-add:hover {
-  background-color: var(--colors-todo-bg-hover);
-}
-
 .todo-list {
   background-color: var(--colors-todo-bg);
   border-radius: 5px;
